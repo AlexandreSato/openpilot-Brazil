@@ -5,13 +5,13 @@ import time
 import multiprocessing
 
 from common.hardware import PC
-from common.common_pyx import sec_since_boot  # pylint: disable=no-name-in-module, import-error
+from common.clock import sec_since_boot  # pylint: disable=no-name-in-module, import-error
 
 
 # time step for each process
 DT_CTRL = 0.01  # controlsd
 DT_MDL = 0.05  # model
-DT_DMON = 0.001  # driver monitoring
+DT_DMON = 0.1  # driver monitoring
 DT_TRML = 0.5  # thermald and manager
 
 
