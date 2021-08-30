@@ -8,15 +8,16 @@ packer = CANPacker(dbc_name)
 if __name__ == "__main__":
     p = Panda()
     p.set_safety_mode(Panda.SAFETY_ALLOUTPUT)
-    print(p.health())
-    # If safety mode == 0, so ALLOUTPUT don't worked
+    dumpsafety = p.health()
+    print(f"\nsafety_mode: {dumpsafety['safety_mode']}")
+    print("If safety mode == 0? so ALLOUTPUT don't worked OR FLAG ALLOWDEBUG is missing\non Panda flash")
 
     values = {
       "ACC_TYPE": 1,
     }
 
     data = packer.make_can_msg("ACC_CONTROL", 0, values)
-    print(data)
+   
     while 1:
       p.can_send(data[0], data[2], data[3])
-
+      print(data)
