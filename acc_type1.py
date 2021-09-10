@@ -34,7 +34,7 @@ def main():
   
   p.set_safety_mode(Panda.SAFETY_TOYOTA)
   p.send_heartbeat()
-  print('relay ON again\nkthxbay\n')
+  print('\n\n\nrelay ON again\nkthxbay\n')
 
 
 def progress(count, total, status=''):
