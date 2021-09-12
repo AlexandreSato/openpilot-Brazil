@@ -13,7 +13,7 @@ p.set_safety_mode(Panda.SAFETY_ALLOUTPUT)
 
 dumpsafety = p.health()
 if dumpsafety['safety_mode'] == 0:
-  print('Sorry, u need change for some dev branch, if u deserv this copy and past this command:\n\n\ncd ..; rm -rf openpilot; git clone -b master --recurse-submodules https://github.com/commaai/openpilot; reboot')
+  print('Sorry, u need change for some dev branch, if u deserv this copy and past this command:\n\n\necho -en "1" > /data/params/d/DisableUpdates; cd ..; rm -rf openpilot; git clone -b master --recurse-submodules https://github.com/commaai/openpilot; reboot')
   exit(1)
 
 packer = CANPacker(dbc_name)
